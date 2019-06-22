@@ -29,13 +29,6 @@ class Country extends Component {
      countriesApi: { countries },
     } = this.props.data;
 
-    
-    console.log("this.props.data", countries)
-    console.log("state.code", this.state.country.code)
-    console.log("state.country", this.state.country.name)
-    console.log("state.population", this.state.country.population)
-
-
     return (
       <div style={{ textAlign: "center", width: "600px", margin: "50px auto" }}>
         <p>Choose the country below</p>
@@ -46,9 +39,13 @@ class Country extends Component {
             </option>
           ))}
          </select> 
-         
+        { this.state.country.name &&
+        <div>
         <p>COUNTRY name: {this.state.country.name}</p> 
         <p>COUNTRY population: {this.state.country.population}</p> 
+        </div>
+        }
+        
      </div>
     )
   }
@@ -60,7 +57,6 @@ class Country extends Component {
     axios
     .get(`https://restcountries.eu/rest/v2/alpha/${code}`)
     .then(response => { 
-      console.log("response", response.data.alpha2Code);
       this.setState({ country: response.data })
     })
   };
