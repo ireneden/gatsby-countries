@@ -1,0 +1,20 @@
+.main-selection {
+    background-color: #00B2CA;
+    padding: 30px 30px 30px 30px;
+    color: white;
+}
+.main-selection select {
+    font-family: Helvetica Neue, sans-serif;
+}
+select {
+    border: none;
+}
+.results {
+    font-family: Helvetica Neue, sans-serif;
+    font-size: 22px;
+    background-color: #7DCFB6;
+    padding: 30px 30px 10px 30px;
+}
+.results p {
+    color: white;
+}
